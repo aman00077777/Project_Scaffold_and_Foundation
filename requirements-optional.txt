@@ -1,0 +1,7 @@
+faiss-cpu>=1.7.4        # vector search / retrieval indexing
+hnswlib>=0.7.0          # approximate nearest neighbor search
+annoy>=1.17.0           # alternative ANN search backend
+wandb>=0.15.0           # experiment tracking
+mlflow>=2.7.0           # experiment tracking / model registry
+optuna>=3.3.0           # hyperparameter optimization
+torch-geometric>=2.4.0  # graph-based fusion architectures
