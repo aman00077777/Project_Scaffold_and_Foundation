@@ -14,9 +14,8 @@ include setup.py
 include requirements.txt
 include requirements-optional.txt
 
-# Package data (recursive)
-recursive-include core *.py
-recursive-include utils *.py
+# Package data (recursive — now under fusion/)
+recursive-include fusion *.py
 
 # Exclude development / CI artifacts
 exclude .pre-commit-config.yaml

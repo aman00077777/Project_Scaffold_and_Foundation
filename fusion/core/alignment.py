@@ -12,6 +12,10 @@ Expected config params:
 
 from typing import Dict
 
+from fusion.utils.logging import get_logger
+
+logger = get_logger(__name__)
+
 import torch
 import torch.nn as nn
 
@@ -74,9 +78,9 @@ class ModalityAligner(nn.Module):
                     f"Known modalities: {list(self.projections.keys())}"
                 )
             projected = self.projections[key](tensor)
-            print(
-                f"[ModalityAligner] {modality.value}: "
-                f"{tensor.shape} -> {projected.shape}"
+            logger.debug(
+                "[ModalityAligner] %s: %s -> %s",
+                modality.value, tensor.shape, projected.shape,
             )
             aligned[modality] = projected
 
