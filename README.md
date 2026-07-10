@@ -98,25 +98,51 @@ aligned = aligner({
 ## Project Structure
 
 ```
-fusion/
-├── constants.py          # Modality, FusionType, TaskType enums
-├── exceptions.py         # FusionError hierarchy
+Project_Scaffold_and_Foundation/
+│
+├── setup.py                    # Package installer entry point
+├── setup.cfg                   # Package metadata & dependencies
+├── pyproject.toml              # Build system, Black, isort, mypy config
+├── VERSION                     # Semantic version (0.1.0)
+├── README.md                   # Project documentation
+├── MANIFEST.in                 # Source distribution inclusion rules
+├── requirements.txt            # Core runtime dependencies
+├── requirements-dev.txt        # Development dependencies
+├── requirements-test.txt       # Testing dependencies
+├── requirements-optional.txt   # Optional extras (faiss, wandb, etc.)
+│
+├── .gitignore                  # Git ignore rules
+├── .editorconfig               # Editor formatting standards
+├── .flake8                     # Flake8 linting config
+├── .pylintrc                   # Pylint static analysis config
+├── .coveragerc                 # Coverage measurement config
+├── .pre-commit-config.yaml     # Pre-commit hook definitions
+├── pytest.ini                  # Pytest configuration
+├── tox.ini                     # Tox multi-env test runner config
+│
+├── DEBUG_LOG.md                # Debug tracking log
+├── ERROR_LOG.md                # Error tracking log
+│
+├── constants.py                # Modality, FusionType, TaskType, PrecisionType enums
+├── exceptions.py               # FusionError exception hierarchy
+│
 ├── core/
-│   ├── types.py          # Type aliases
-│   ├── base.py           # FusionComponent ABC
-│   ├── modal_tensor.py   # ModalTensor dataclass
-│   ├── alignment.py      # ModalityAligner
-│   └── schema.py         # ModalitySchema validation
+│   ├── types.py                # TensorDict, ModalityDict, ConfigDict type aliases
+│   ├── base.py                 # FusionComponent abstract base class
+│   ├── modal_tensor.py         # ModalTensor dataclass with device & detach support
+│   ├── alignment.py            # ModalityAligner — per-modality linear projections
+│   └── schema.py               # ModalitySchema — declarative input validation
+│
 └── utils/
-    ├── helpers.py         # Seeds, parameter utils
-    ├── logging.py         # Logger factory
-    ├── metrics.py         # Accuracy, mAP, NDCG
-    ├── io.py              # Checkpoint I/O
-    ├── config.py          # YAML config loader
-    ├── device.py          # Device placement
-    ├── download.py        # Asset download
-    ├── registry.py        # Component registry
-    └── visualization.py   # Plots & visualisation
+    ├── helpers.py               # seed_everything, count_parameters, freeze/unfreeze
+    ├── logging.py               # Configurable logger factory
+    ├── metrics.py               # Accuracy, Top-K, mAP, NDCG
+    ├── io.py                    # Checkpoint & config I/O
+    ├── config.py                # YAML-based configuration loader
+    ├── device.py                # Device detection & placement
+    ├── download.py              # Asset / model download helpers
+    ├── registry.py              # Component registry for plugin discovery
+    └── visualization.py         # Training curves & embedding plots
 ```
 
 ---
