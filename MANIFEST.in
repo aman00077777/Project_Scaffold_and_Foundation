@@ -1,0 +1,42 @@
+# ──────────────────────────────────────────────────────────────
+# MANIFEST.in — Source-distribution inclusion rules for Fusion
+# ──────────────────────────────────────────────────────────────
+
+# Project metadata & build config
+include LICENSE
+include README.md
+include VERSION
+include pyproject.toml
+include setup.cfg
+include setup.py
+
+# Runtime requirements
+include requirements.txt
+include requirements-optional.txt
+
+# Package data (recursive)
+recursive-include core *.py
+recursive-include utils *.py
+
+# Exclude development / CI artifacts
+exclude .pre-commit-config.yaml
+exclude .coveragerc
+exclude .flake8
+exclude .pylintrc
+exclude pytest.ini
+exclude tox.ini
+prune .git
+prune __pycache__
+prune *.egg-info
+prune .tox
+prune .mypy_cache
+prune .pytest_cache
+prune htmlcov
+
+# Exclude dev/test requirements
+exclude requirements-dev.txt
+exclude requirements-test.txt
+
+# Exclude log files
+exclude ERROR_LOG.md
+exclude DEBUG_LOG.md
