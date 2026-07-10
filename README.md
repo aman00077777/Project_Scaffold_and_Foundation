@@ -28,8 +28,13 @@
 - ✅ **ModalitySchema** — declarative shape & modality validation at runtime
 - ✅ **ModalityAligner** — learnable projections into a shared embedding space
 - ✅ **FusionComponent** — abstract base with `get_config()` / `from_config()` serialisation
+- ✅ **Config** — YAML loader with dot-notation access, deep merge, `from_yaml()` / `to_dict()`
+- ✅ **Registry** — generic plugin registry with `register()` decorator, `get()`, `list()`, `build()`
+- ✅ **Device utilities** — auto device selection, recursive `move_to_device()`, GPU memory info
+- ✅ **Download helpers** — HTTP stream download with progress bar, HuggingFace Hub integration
 - ✅ **Evaluation metrics** — accuracy, top-k, mAP, NDCG
-- ✅ **Utilities** — logging, reproducibility seeds, parameter freeze/unfreeze, config I/O
+- ✅ **Visualization** — training curve plots, embedding projections (t-SNE / PCA)
+- ✅ **Utilities** — logging, reproducibility seeds, parameter freeze/unfreeze, checkpoint I/O
 - ✅ **Exception hierarchy** — `FusionError` tree with structured `details` payloads
 - ✅ **Project tooling** — Black, isort, Flake8, Pylint, mypy, pre-commit, tox, pytest
 
@@ -154,8 +159,8 @@ Project_Scaffold_and_Foundation/
 | **Aman Sharma** | Core engine — `ModalTensor`, `ModalitySchema`, `ModalityAligner`, `FusionComponent` base class, exception hierarchy, type system |
 | **Aman Hingawe** | Root configuration & core modules — `setup.cfg`, `pyproject.toml`, project initialisation, debug & error tracking |
 | **Gauri Ninawe** | Root configurations — `requirements*.txt`, `VERSION`, build system setup |
-| **Shantanu Warghane** | Root linting — `.flake8`, `.pylintrc`, `.coveragerc`, `pre-commit` config, project structure |
-| **Arya Tiwari** | Utilities — evaluation metrics, helper functions, logging, I/O, download, visualisation, testing & coverage config |
+| **Shantanu Warghane** | Root linting & utilities — `.flake8`, `.pylintrc`, `.pre-commit-config.yaml`, `.coveragerc`, project structure, `config.py`, `registry.py`, `device.py` |
+| **Arya Tiwari** | Utilities — evaluation metrics, helper functions, logging, I/O, `download.py`, `visualization.py`, testing & coverage config |
 
 ---
 
